@@ -11,6 +11,6 @@ bool setBit(int&, int);
 double mean(double array[], int );
 double stddev(double array[], int );
 
-std::pair<double, double> max2(double array[], int numElements);
+std::pair<double, double> max2(double array[], int );
 
 #endif //FUNCTIONS_H

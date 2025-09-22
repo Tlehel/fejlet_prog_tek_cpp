@@ -1,8 +1,12 @@
 #include <iostream>
+#include <sstream>
+#include <string>
 #include "functions.h"
 #include "def.h"
 using namespace std;
 
+int countWords(string text);
+string code(string text);
 
 int main() {
 
@@ -14,7 +18,7 @@ int main() {
 
     cout << ex_end;
 
-    for (int i = 0; i < 35; ++i) {
+    fort(35) {
     int n = 0;
     if(setBit(n, i)) {
     cout<<i<<" ---> " << n <<endl;
@@ -36,5 +40,42 @@ int main() {
 
     cout << ex_end;
 
+    pair<double,double> k = max2(array,numelements);
+
+    cout << k.first <<" "<<k.second << endl;
+    cout << ex_end << ex_end;
+
+    string str;
+    str = "./a.out 1.1 2.2 3.3 alma korte 4.4";
+    //cin >> str;
+    istringstream inputstream(str);
+    string word;
+
+    double sum = 0;
+    while(inputstream >> word){
+        istringstream wordstream(word);
+        double number;
+        if( wordstream >> number ) {
+            sum+= number;
+        }
+    }
+    cout << sum << endl << ex_end;
+
+    cout << countWords("az alma egy mosolygos allat nagy fogakkal") << endl << ex_end;
+
+
+
+
     return 0;
+}
+
+int countWords(string text) {
+    istringstream txt(text);
+    string word;
+    int count = 0;
+    while(txt >> word) count++;
+    return count;
+}
+string code(string text) {
+    
 }
