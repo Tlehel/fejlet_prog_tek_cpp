@@ -1,12 +1,9 @@
 #include <iostream>
-#include <sstream>
 #include <string>
+#include <sstream>
 #include "functions.h"
 #include "def.h"
 using namespace std;
-
-int countWords(string text);
-string code(string text);
 
 int main() {
 
@@ -63,19 +60,11 @@ int main() {
 
     cout << countWords("az alma egy mosolygos allat nagy fogakkal") << endl << ex_end;
 
+    cout << code("alma a kertben ,az alma egy mosolygos allat nagy fogakkal")<<std::endl;
+
+    cout << decode(code("alma a kertben ,az alma egy mosolygos allat nagy fogakkal")) <<std::endl << ex_end;
 
 
 
     return 0;
-}
-
-int countWords(string text) {
-    istringstream txt(text);
-    string word;
-    int count = 0;
-    while(txt >> word) count++;
-    return count;
-}
-string code(string text) {
-    
 }

@@ -5,6 +5,8 @@
 #include "functions.h"
 
 #include <cmath>
+#include <iostream>
+#include <sstream>
 #include "def.h"
 
 int countBits(int number) {
@@ -26,7 +28,7 @@ bool setBit(int& number, int order) {
     number = number | setter;
     return true;
 }
-double mean(double array[], int numElements) {
+double mean(const double array[], int numElements) {
     if (!numElements) return NAN;
     double result = 0;
     fort(numElements) {
@@ -34,7 +36,7 @@ double mean(double array[], int numElements) {
     }
     return result/numElements;
 }
-double stddev(double array[], int numElements) {
+double stddev(const double array[], int numElements) {
     if (!numElements) return NAN;
     double result = 0;
     fort(numElements) {
@@ -70,4 +72,53 @@ std::pair<double, double> max2(double array[], int numElements) {
         }
     }
     return std::make_pair(maxn1,maxn2);
+}
+int countWords(const std::string& text) {
+    std::istringstream txt(text);
+    std::string word;
+    int count = 0;
+    while(txt >> word) count++;
+    return count;
+}
+std::string code(const std::string& text) {
+    std::istringstream txt(text);
+    char c;
+    std::string words;
+    while (txt >> c) {
+        if (c>=65 && c<90) {
+            c++;
+        }
+        else if(c==90) {
+            c=65;
+        }
+        if (c>=97 && c<122) {
+            c++;
+        }
+        else if (c==122) {
+            c=97;
+        }
+        words +=c;
+    }
+    return words;
+}
+std::string decode(const std::string& text) {
+    std::istringstream txt(text);
+    char c;
+    std::string words;
+    while (txt >> c) {
+        if (c>65 && c<=90) {
+            c--;
+        }
+        else if(c==65) {
+            c=90;
+        }
+        if (c>97 && c<=122) {
+            c--;
+        }
+        else if (c==97) {
+            c=122;
+        }
+        words +=c;
+    }
+    return words;
 }

@@ -1,2 +1,7 @@
 project(lab2)
-add_executable(lab2 main_02.cpp)
+add_executable(lab2 main_02.cpp
+        def.h
+        Point.cpp
+        Point.h
+        utils.cpp
+        utils.h)
