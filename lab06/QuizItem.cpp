@@ -4,6 +4,7 @@
 
 #include "QuizItem.h"
 
+
 QuizItem::QuizItem() {
     counter ++;
     this->id = counter;
