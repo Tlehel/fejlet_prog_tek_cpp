@@ -34,5 +34,5 @@ Settlement SettlementStatistics::minPopulationBySettlement() const {
 }
 
 std::vector<Settlement> SettlementStatistics::findSettlementsByName(const std::string &name) {
-    
+
 }

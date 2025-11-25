@@ -13,7 +13,7 @@ std::string county = "";
 int population = 0;
 // constructor, getters, setters, inserter operator
 public:
-    Settlement();
+    Settlement():population(0){}
     Settlement(std::string n,std::string c,int p);
 
     std::string getname();

@@ -34,7 +34,8 @@ void Settlement::setpop(int p) {
     population = p;
 }
 
-std::ostream & operator<<(std::ostream &os) {
-
+std::ostream & operator<<(std::ostream &os,Settlement& a) {
+    os<<a.name  << a.county << a.population;
+    return os;
 }
 
