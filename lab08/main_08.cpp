@@ -7,11 +7,11 @@ int main() {
 
     Directory a("root");
     Directory b("documents");
-    a.add(b);
+    a.add(&b);
     b.add(FileSystemItem("reports.txt",1500));
     b.add(FileSystemItem("notes.txt",1500));
     Directory c("pictures");
-    a.add(c);
+    a.add(&c);
     c.add(FileSystemItem("photo1",200000));
     c.add(FileSystemItem("photo2",200000));
     a.add(FileSystemItem("aaaa",3));
