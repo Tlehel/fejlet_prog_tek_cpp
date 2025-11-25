@@ -9,17 +9,17 @@
 #include <string>
 
 struct SettlementStatistics {
-    virtual int numSettlements() const = 0;
-    virtual int numCounties() const = 0;
-    virtual int numSettlementsByCounty(const std::string& county) const = 0;
+    virtual int numSettlements() const;
+    virtual int numCounties() const;
+    virtual int numSettlementsByCounty(const std::string& county) const;
     virtual std::vector<Settlement> findSettlementsByCounty(
-    const std::string& county) const = 0;
+    const std::string& county) const;
     virtual Settlement findSettlementsByNameAndCounty(
-    const std::string& name, const std::string& county) const = 0;
-    virtual Settlement maxPopulationBySettlement() const = 0;
-    virtual Settlement minPopulationBySettlement() const = 0;
+    const std::string& name, const std::string& county) const;
+    virtual Settlement maxPopulationBySettlement() const;
+    virtual Settlement minPopulationBySettlement() const;
     virtual std::vector<Settlement> findSettlementsByName(
-    const std::string& name) = 0;
+    const std::string& name);
 };
 
 class SettlementStatisticsImpl {
