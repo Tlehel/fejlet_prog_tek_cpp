@@ -63,7 +63,9 @@ std::string SimpleTextGenerator::generate(std::string startWords, int numWords) 
     std::getline(temp,word1);
     std::string word2 ;
     temp >> word2;
+    std::string sentence;
 
+    sentence += word1+" "+word2;
     for (int i=0;i<numWords;i++) {
         std::vector<std::string> values = getStatistics()[startWords];
         std::string s;
@@ -75,8 +77,9 @@ std::string SimpleTextGenerator::generate(std::string startWords, int numWords) 
         word1 = word2;
         word2 = s;
         startWords = word1+"-"+word2;
+        sentence += " "+s;
     }
-
+    return sentence;
 }
 
 SimpleTextGenerator::~SimpleTextGenerator() = default;
